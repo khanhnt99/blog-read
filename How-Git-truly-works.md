@@ -25,6 +25,12 @@ branches  COMMIT_EDITMSG  config  description  FETCH_HEAD  HEAD  hooks  index  i
 - Nếu file ban đầu được sửa và add lại vào repository, Git sẽ thực hiện qúa trình tương tự -> Một `blobs` mới sẽ được tạo.
 
 ### Trees
+- Tạo 1 thư mục con trong repository được gọi là `subfolder`. Sau đó tạo 1 filename `yourfile.txt` trong `subfolder` đó. Sau đó add chúng vào trong repository -> git sẽ tạo `blob` mới cho `yourfile.txt` theo các bước mà đã được nói ở phần trước.
+- Tạo thời điểm này -> thực hiện commit cả 2 file `myfile.txt` và `yourfile.txt` bằng câu lệnh `git commit` -> Lúc này git thực hiện 2 bước:
+    + Tạo `root tree` của repository
+    + Tạo commit
+- **root tree** lưu trữ cấu trúc của file và folder của toàn bộ repository. Đây là một file chứa tham chiếu đến mọi `blob` hoặc `subfolder` có trong repository.
+- Mỗi hàng trong `root tree` tham chiếu đến 1 `blob` hoặc `sub-trees` -> `Tree` tương đương với 1 folder 
 
 __Docs:__
 - https://towardsdatascience.com/how-git-truly-works-cd9c375966f6
